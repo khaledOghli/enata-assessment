@@ -1,0 +1,101 @@
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetUno,
+} from 'unocss'
+import transformerDirectives from '@unocss/transformer-directives'
+
+export default defineConfig({
+  theme: {
+    colors: {
+      primary: {
+        '50': '#f6f7f9',
+        '100': '#eceef2',
+        '200': '#d4dae3',
+        '300': '#afbaca',
+        '400': '#8495ac',
+        '500': '#647793',
+        '600': '#506079',
+        '700': '#414e63',
+        '800': '#374151',
+        '850': '#2e3746',
+        '900': '#333b47',
+        '950': '#22272f',
+      },
+      secondary: {
+        '50': '#f8ffe5',
+        '100': '#eeffc7',
+        '200': '#dbff95',
+        '300': '#c8ff6b',
+        '400': '#a6f625',
+        '500': '#86dd05',
+        '600': '#66b100',
+        '700': '#4d8605',
+        '800': '#3f690b',
+        '900': '#36590e',
+        '950': '#1a3201',
+      },
+      light: {
+        0: '#ffffff',
+        50: '#fbfbfb',
+        100: '#f9f9f9',
+        200: '#f3f3f3',
+        300: '#d9d9d9',
+        400: '#c3c3c3',
+        500: '#aeaeae',
+        600: '#a3a3a3',
+        700: '#828282',
+        800: '#626262',
+        900: '#4c4c4c',
+        950: '#333333',
+        1000: '#1c1c1c',
+      },
+      danger: {
+        50: '#ffebeb',
+        100: '#ffd6d6',
+        200: '#fcc8ce',
+        300: '#f64e60',
+        400: '#dd4656',
+        500: '#c53e4d',
+        600: '#b93b48',
+        700: '#942f3a',
+        800: '#6f232b',
+        900: '#561b22',
+      },
+      warning: {
+        50: '#fff7e9',
+        100: '#feddab',
+        200: '#fed69a',
+        300: '#fecf89',
+        400: '#fdc268',
+        500: '#fdbb57',
+        600: '#fdb446',
+        700: '#fca725',
+        800: '#fc9903',
+        900: '#da8503',
+      },
+    },
+    extend: {},
+  },
+  shortcuts: [
+    {
+      'tag-badge': 'flex items-center justify-center text-center ms-2 !text-light-800 !bg-light-50 text-sm !rounded-full md:min-w-25px md:min-h-25px lg:min-w-17px lg:min-h-17px xl:min-w-25px xl:min-h-25px min-h-25px min-w-25px p-1 lh-0',
+      'title-primary-gradient': 'text-primary-300 bg-gradient-to-r from-primary-300 to-primary-800 bg-clip-text text-transparent',
+    },
+    {
+      'enata-container': 'xl:px-15 lg:px-10 md-px-7 sm-px-5 px-4',
+    },
+  ],
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons({
+      scale: 1.2,
+      warn: true,
+    }),
+  ],
+  transformers: [
+    transformerDirectives(),
+  ],
+})
